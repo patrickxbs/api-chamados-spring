@@ -70,7 +70,88 @@ Requisição: `GET /chamados`
 Resposta HTTP 200:
 
 ```json
-[{"id":1,"titulo":"Computador não liga","solicitante":"Ana Souza","setor":"Financeiro","prioridade":"ALTA","status":"ABERTO"},{"id":2,"titulo":"Impressora sem conexão","solicitante":"Bruno Lima","setor":"Recursos Humanos","prioridade":"MEDIA","status":"EM_ANDAMENTO"},{"id":3,"titulo":"Acesso ao sistema bloqueado","solicitante":"Carla Reis","setor":"Financeiro","prioridade":"ALTA","status":"EM_ANDAMENTO"},{"id":4,"titulo":"Instalar editor de texto","solicitante":"Diego Alves","setor":"Marketing","prioridade":"BAIXA","status":"RESOLVIDO"},{"id":5,"titulo":"Rede instável no escritório","solicitante":"Elisa Costa","setor":"Comercial","prioridade":"ALTA","status":"ABERTO"},{"id":6,"titulo":"Configurar e-mail corporativo","solicitante":"Felipe Rocha","setor":"Operações","prioridade":"MEDIA","status":"RESOLVIDO"},{"id":7,"titulo":"Teclado com teclas defeituosas","solicitante":"Giovana Melo","setor":"Marketing","prioridade":"BAIXA","status":"ABERTO"},{"id":8,"titulo":"VPN não conecta","solicitante":"Heitor Nunes","setor":"Tecnologia","prioridade":"ALTA","status":"RESOLVIDO"},{"id":9,"titulo":"Monitor piscando","solicitante":"Isabela Dias","setor":"Financeiro","prioridade":"MEDIA","status":"EM_ANDAMENTO"},{"id":10,"titulo":"Solicitar acesso à pasta compartilhada","solicitante":"João Pedro","setor":"Recursos Humanos","prioridade":"BAIXA","status":"ABERTO"}]
+[
+  {
+    "id": 1,
+    "titulo": "Computador não liga",
+    "solicitante": "Ana Souza",
+    "setor": "Financeiro",
+    "prioridade": "ALTA",
+    "status": "ABERTO"
+  },
+  {
+    "id": 2,
+    "titulo": "Impressora sem conexão",
+    "solicitante": "Bruno Lima",
+    "setor": "Recursos Humanos",
+    "prioridade": "MEDIA",
+    "status": "EM_ANDAMENTO"
+  },
+  {
+    "id": 3,
+    "titulo": "Acesso ao sistema bloqueado",
+    "solicitante": "Carla Reis",
+    "setor": "Financeiro",
+    "prioridade": "ALTA",
+    "status": "EM_ANDAMENTO"
+  },
+  {
+    "id": 4,
+    "titulo": "Instalar editor de texto",
+    "solicitante": "Diego Alves",
+    "setor": "Marketing",
+    "prioridade": "BAIXA",
+    "status": "RESOLVIDO"
+  },
+  {
+    "id": 5,
+    "titulo": "Rede instável no escritório",
+    "solicitante": "Elisa Costa",
+    "setor": "Comercial",
+    "prioridade": "ALTA",
+    "status": "ABERTO"
+  },
+  {
+    "id": 6,
+    "titulo": "Configurar e-mail corporativo",
+    "solicitante": "Felipe Rocha",
+    "setor": "Operações",
+    "prioridade": "MEDIA",
+    "status": "RESOLVIDO"
+  },
+  {
+    "id": 7,
+    "titulo": "Teclado com teclas defeituosas",
+    "solicitante": "Giovana Melo",
+    "setor": "Marketing",
+    "prioridade": "BAIXA",
+    "status": "ABERTO"
+  },
+  {
+    "id": 8,
+    "titulo": "VPN não conecta",
+    "solicitante": "Heitor Nunes",
+    "setor": "Tecnologia",
+    "prioridade": "ALTA",
+    "status": "RESOLVIDO"
+  },
+  {
+    "id": 9,
+    "titulo": "Monitor piscando",
+    "solicitante": "Isabela Dias",
+    "setor": "Financeiro",
+    "prioridade": "MEDIA",
+    "status": "EM_ANDAMENTO"
+  },
+  {
+    "id": 10,
+    "titulo": "Solicitar acesso à pasta compartilhada",
+    "solicitante": "João Pedro",
+    "setor": "Recursos Humanos",
+    "prioridade": "BAIXA",
+    "status": "ABERTO"
+  }
+]
 ```
 
 Explicação: a resposta contém os 10 chamados fictícios carregados ao iniciar a aplicação.
@@ -92,7 +173,14 @@ Requisição: `GET /chamados/1`
 Resposta HTTP 200:
 
 ```json
-{"id":1,"titulo":"Computador não liga","solicitante":"Ana Souza","setor":"Financeiro","prioridade":"ALTA","status":"ABERTO"}
+{
+  "id": 1,
+  "titulo": "Computador não liga",
+  "solicitante": "Ana Souza",
+  "setor": "Financeiro",
+  "prioridade": "ALTA",
+  "status": "ABERTO"
+}
 ```
 
 Explicação: o ID 1 existe e seus dados são retornados como um objeto JSON.
@@ -114,7 +202,9 @@ Requisição: `GET /chamados/999`
 Resposta HTTP 404:
 
 ```json
-{"erro":"Chamado não encontrado"}
+{
+  "erro": "Chamado não encontrado"
+}
 ```
 
 Explicação: como não há chamado com esse ID, a API responde com `NOT_FOUND`.
@@ -136,7 +226,32 @@ Requisição: `GET /chamados/setor?nome=fInAnCeIrO`
 Resposta HTTP 200:
 
 ```json
-[{"id":1,"titulo":"Computador não liga","solicitante":"Ana Souza","setor":"Financeiro","prioridade":"ALTA","status":"ABERTO"},{"id":3,"titulo":"Acesso ao sistema bloqueado","solicitante":"Carla Reis","setor":"Financeiro","prioridade":"ALTA","status":"EM_ANDAMENTO"},{"id":9,"titulo":"Monitor piscando","solicitante":"Isabela Dias","setor":"Financeiro","prioridade":"MEDIA","status":"EM_ANDAMENTO"}]
+[
+  {
+    "id": 1,
+    "titulo": "Computador não liga",
+    "solicitante": "Ana Souza",
+    "setor": "Financeiro",
+    "prioridade": "ALTA",
+    "status": "ABERTO"
+  },
+  {
+    "id": 3,
+    "titulo": "Acesso ao sistema bloqueado",
+    "solicitante": "Carla Reis",
+    "setor": "Financeiro",
+    "prioridade": "ALTA",
+    "status": "EM_ANDAMENTO"
+  },
+  {
+    "id": 9,
+    "titulo": "Monitor piscando",
+    "solicitante": "Isabela Dias",
+    "setor": "Financeiro",
+    "prioridade": "MEDIA",
+    "status": "EM_ANDAMENTO"
+  }
+]
 ```
 
 Explicação: o filtro encontra os três chamados do Financeiro apesar da combinação de letras maiúsculas e minúsculas na busca.
@@ -158,7 +273,40 @@ Requisição: `GET /chamados/prioridade?nivel=alta`
 Resposta HTTP 200:
 
 ```json
-[{"id":1,"titulo":"Computador não liga","solicitante":"Ana Souza","setor":"Financeiro","prioridade":"ALTA","status":"ABERTO"},{"id":3,"titulo":"Acesso ao sistema bloqueado","solicitante":"Carla Reis","setor":"Financeiro","prioridade":"ALTA","status":"EM_ANDAMENTO"},{"id":5,"titulo":"Rede instável no escritório","solicitante":"Elisa Costa","setor":"Comercial","prioridade":"ALTA","status":"ABERTO"},{"id":8,"titulo":"VPN não conecta","solicitante":"Heitor Nunes","setor":"Tecnologia","prioridade":"ALTA","status":"RESOLVIDO"}]
+[
+  {
+    "id": 1,
+    "titulo": "Computador não liga",
+    "solicitante": "Ana Souza",
+    "setor": "Financeiro",
+    "prioridade": "ALTA",
+    "status": "ABERTO"
+  },
+  {
+    "id": 3,
+    "titulo": "Acesso ao sistema bloqueado",
+    "solicitante": "Carla Reis",
+    "setor": "Financeiro",
+    "prioridade": "ALTA",
+    "status": "EM_ANDAMENTO"
+  },
+  {
+    "id": 5,
+    "titulo": "Rede instável no escritório",
+    "solicitante": "Elisa Costa",
+    "setor": "Comercial",
+    "prioridade": "ALTA",
+    "status": "ABERTO"
+  },
+  {
+    "id": 8,
+    "titulo": "VPN não conecta",
+    "solicitante": "Heitor Nunes",
+    "setor": "Tecnologia",
+    "prioridade": "ALTA",
+    "status": "RESOLVIDO"
+  }
+]
 ```
 
 Explicação: são retornados os quatro chamados com prioridade `ALTA`, inclusive o resolvido, pois este filtro considera somente a prioridade.
@@ -180,7 +328,16 @@ Requisição: `GET /chamados/busca?texto=IMPRESSORA`
 Resposta HTTP 200:
 
 ```json
-[{"id":2,"titulo":"Impressora sem conexão","solicitante":"Bruno Lima","setor":"Recursos Humanos","prioridade":"MEDIA","status":"EM_ANDAMENTO"}]
+[
+  {
+    "id": 2,
+    "titulo": "Impressora sem conexão",
+    "solicitante": "Bruno Lima",
+    "setor": "Recursos Humanos",
+    "prioridade": "MEDIA",
+    "status": "EM_ANDAMENTO"
+  }
+]
 ```
 
 Explicação: o título foi encontrado mesmo com o texto de busca em letras maiúsculas.
@@ -224,7 +381,32 @@ Requisição: `GET /chamados/criticos`
 Resposta HTTP 200:
 
 ```json
-[{"id":1,"titulo":"Computador não liga","solicitante":"Ana Souza","setor":"Financeiro","prioridade":"ALTA","status":"ABERTO"},{"id":3,"titulo":"Acesso ao sistema bloqueado","solicitante":"Carla Reis","setor":"Financeiro","prioridade":"ALTA","status":"EM_ANDAMENTO"},{"id":5,"titulo":"Rede instável no escritório","solicitante":"Elisa Costa","setor":"Comercial","prioridade":"ALTA","status":"ABERTO"}]
+[
+  {
+    "id": 1,
+    "titulo": "Computador não liga",
+    "solicitante": "Ana Souza",
+    "setor": "Financeiro",
+    "prioridade": "ALTA",
+    "status": "ABERTO"
+  },
+  {
+    "id": 3,
+    "titulo": "Acesso ao sistema bloqueado",
+    "solicitante": "Carla Reis",
+    "setor": "Financeiro",
+    "prioridade": "ALTA",
+    "status": "EM_ANDAMENTO"
+  },
+  {
+    "id": 5,
+    "titulo": "Rede instável no escritório",
+    "solicitante": "Elisa Costa",
+    "setor": "Comercial",
+    "prioridade": "ALTA",
+    "status": "ABERTO"
+  }
+]
 ```
 
 Explicação: o resultado combina prioridade `ALTA` com status diferente de `RESOLVIDO`; o chamado de ID 8, embora prioritário, fica de fora por estar resolvido.
@@ -246,7 +428,12 @@ Requisição: `GET /chamados/resumo`
 Resposta HTTP 200:
 
 ```json
-{"abertos":4,"emAndamento":3,"resolvidos":3,"total":10}
+{
+  "abertos": 4,
+  "emAndamento": 3,
+  "resolvidos": 3,
+  "total": 10
+}
 ```
 
 Explicação: os totais correspondem aos 10 chamados iniciais, distribuídos entre os três status.
@@ -276,7 +463,14 @@ Requisição: `POST /chamados`
 Resposta HTTP 201:
 
 ```json
-{"id":11,"titulo":"Impressora do laboratorio sem papel","solicitante":"Marina Santos","setor":"Laboratorio","prioridade":"MEDIA","status":"ABERTO"}
+{
+  "id": 11,
+  "titulo": "Impressora do laboratorio sem papel",
+  "solicitante": "Marina Santos",
+  "setor": "Laboratorio",
+  "prioridade": "MEDIA",
+  "status": "ABERTO"
+}
 ```
 
 Explicação: a API recebeu o JSON, atribuiu o próximo ID disponível (11), guardou o chamado em memória e respondeu com `CREATED`.
@@ -298,7 +492,14 @@ Requisição: `GET /chamados/11`
 Resposta HTTP 200:
 
 ```json
-{"id":11,"titulo":"Impressora do laboratorio sem papel","solicitante":"Marina Santos","setor":"Laboratorio","prioridade":"MEDIA","status":"ABERTO"}
+{
+  "id": 11,
+  "titulo": "Impressora do laboratorio sem papel",
+  "solicitante": "Marina Santos",
+  "setor": "Laboratorio",
+  "prioridade": "MEDIA",
+  "status": "ABERTO"
+}
 ```
 
 Explicação: a consulta confirma que o chamado criado pelo POST está disponível durante a execução atual da aplicação.
